@@ -1714,21 +1714,10 @@
       /* =========================================================
          הגדרות רשימת ההמתנה: זה המקום היחיד שצריך לערוך לפני העלייה לאוויר
          ========================================================= */
-      var WAITLIST_CONFIG = {
-        // 1. הדבק את הקישור מ-Google Apps Script בתוך המרכאות של endpoint:
+   var WAITLIST_CONFIG = {
         endpoint: 'https://script.google.com/macros/s/AKfycbyZWdwEFkeQ3lOKYJ7miVQUcU_VkXlSj5cUbWc_z8I-xhsov3WQ-5ojRg_pxwiK0d__mQ/exec',
-
-        // 2. שונה ל-text/plain כדי למנוע שגיאות CORS ב-Google Apps Script
         contentType: 'text/plain',
-
         demoMode: 'auto',
-(כמובן, החלף את ה-URL בדוגמה למעלה בקישור ה-Web App האמיתי שהעתקת מגוגל).
-🚀 לסיום והעלאה לאוויר:
-לאחר שאתה שומר את הקובץ index.html, הרץ ב-Git Bash מתיקיית הפרויקט:
-git add index.html
-git commit -m "fix: set Google Apps Script endpoint and content-type"
-git push origin main
-
         timeoutMs: 10000
       };
 
