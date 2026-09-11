@@ -1715,21 +1715,19 @@
          הגדרות רשימת ההמתנה: זה המקום היחיד שצריך לערוך לפני העלייה לאוויר
          ========================================================= */
       var WAITLIST_CONFIG = {
-        // כתובת שמקבלת POST. דוגמאות:
-        //   Formspree:           'https://formspree.io/f/XXXXXXX'
-        //   Google Apps Script:  'https://script.google.com/macros/s/XXXXXXX/exec'
-        //   Supabase / API משלכם: 'https://example.com/api/waitlist'
-        endpoint: '',
+        // 1. הדבק את הקישור מ-Google Apps Script בתוך המרכאות של endpoint:
+        endpoint: 'https://script.google.com/macros/s/AKfycbyZWdwEFkeQ3lOKYJ7miVQUcU_VkXlSj5cUbWc_z8I-xhsov3WQ-5ojRg_pxwiK0d__mQ/exec',
 
-        // 'application/json' עבור Formspree, Supabase או API משלכם.
-        // 'text/plain' עבור Google Apps Script: עם JSON הדפדפן שולח קודם בקשת preflight
-        // ש-Apps Script לא עונה עליה, והשליחה נכשלת. גוף הבקשה נשאר JSON בשני המקרים.
-        contentType: 'application/json',
+        // 2. שונה ל-text/plain כדי למנוע שגיאות CORS ב-Google Apps Script
+        contentType: 'text/plain',
 
-        // 'auto': שליחה מדומה רק כשאין endpoint והעמוד פתוח מקובץ מקומי, מ-localhost
-        // או עם ?demo=1 בכתובת. בכל מקום אחר לא יוצג אישור בלי שמירה אמיתית.
-        // true / false: כפייה ידנית של מצב ההדגמה.
         demoMode: 'auto',
+(כמובן, החלף את ה-URL בדוגמה למעלה בקישור ה-Web App האמיתי שהעתקת מגוגל).
+🚀 לסיום והעלאה לאוויר:
+לאחר שאתה שומר את הקובץ index.html, הרץ ב-Git Bash מתיקיית הפרויקט:
+git add index.html
+git commit -m "fix: set Google Apps Script endpoint and content-type"
+git push origin main
 
         timeoutMs: 10000
       };
